@@ -43,100 +43,68 @@
             background: transparent;
         }
 
-        /* BUY Button */
-        .btn-buy-area {
-            bottom: 6%;
-            left: 5%;
-            width: 44%;
-            height: 6%;
-        }
+        /* Main Trading Buttons */
+        .btn-buy-area { bottom: 6%; left: 5%; width: 44%; height: 6%; }
+        .btn-sell-area { bottom: 6%; right: 5%; width: 44%; height: 6%; }
 
-        /* SELL Button */
-        .btn-sell-area {
-            bottom: 6%;
-            right: 5%;
-            width: 44%;
-            height: 6%;
-        }
-
-        /* Bottom Nav: Trades (1st slot) */
-        .trades-area {
-            bottom: 0%;
-            left: 0%;
-            width: 20%;
-            height: 7%;
-        }
-
-        /* Bottom Nav: Signals (3rd slot) */
-        .signals-area {
-            bottom: 0%;
-            left: 40%;
-            width: 20%;
-            height: 7%;
-        }
-
-        /* Bottom Nav: Classic Mode (4th slot) */
-        .classic-area {
-            bottom: 0%;
-            left: 60%;
-            width: 20%;
-            height: 7%;
-        }
+        /* 
+           Bottom Nav Layout (6 slots)
+           We divide the 100% width into 6 equal parts (roughly 16.6% each)
+        */
+        .trades-area { bottom: 0%; left: 0%; width: 16.66%; height: 7%; }
         
-        /* Bottom Nav: Social Trading (5th slot) */
-        .social-area {
-            bottom: 0%;
-            left: 80%;
-            width: 20%;
-            height: 7%;
-        }
-
-        /* --- VISIBLE BOT BUTTON STYLES --- */
+        /* THE NEW BOT BUTTON AREA */
         .visible-bot-btn {
             position: absolute;
             bottom: 0%;
-            left: 20%; /* 2nd slot */
-            width: 20%;
+            left: 16.66%; /* Exact slot between Trades and Signals */
+            width: 16.66%;
             height: 7%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: #8892b0; /* Gray color like the others */
-            font-size: 11px;
+            color: #8892b0; /* Gray like the others */
+            font-size: 10px;
             text-decoration: none;
             z-index: 20;
+            background-color: #0b132b; /* Solid background to hide the image underneath */
         }
+        
+        .visible-bot-btn span { margin-top: 2px; }
+        .visible-bot-btn:active { color: #00c853; }
 
-        .visible-bot-btn span {
-            margin-top: 2px;
-        }
+        /* Shift the rest of the buttons to fit the 6 slots */
+        .signals-area { bottom: 0%; left: 33.33%; width: 16.66%; height: 7%; }
+        .classic-area { bottom: 0%; left: 50%; width: 16.66%; height: 7%; }
+        .social-area { bottom: 0%; left: 66.66%; width: 16.66%; height: 7%; }
+        .more-area { bottom: 0%; left: 83.33%; width: 16.66%; height: 7%; }
 
-        .visible-bot-btn:hover, .visible-bot-btn:active {
-            color: #00c853; /* Turns green when clicked */
-        }
     </style>
 </head>
 <body>
 
     <div class="app-container">
         
-        <!-- Loads your background.jpg image -->
         <img src="background.jpg" alt="Pocket Option App" class="app-image">
 
-        <!-- Invisible Clickable Areas -->
+        <!-- Clickable Areas for existing buttons -->
         <a href="#" class="click-area btn-buy-area" onclick="alert('Pocket option Bot: BUY clicked.')"></a>
         <a href="#" class="click-area btn-sell-area" onclick="alert('Pocket option Bot: SELL clicked.')"></a>
+        
         <a href="#" class="click-area trades-area" onclick="alert('Pocket option Bot: Trades opened.')"></a>
         <a href="#" class="click-area signals-area" onclick="alert('Pocket option Bot: Signals opened.')"></a>
         <a href="#" class="click-area classic-area" onclick="alert('Pocket option Bot: Classic mode opened.')"></a>
         <a href="#" class="click-area social-area" onclick="alert('Pocket option Bot: Social Trading opened.')"></a>
+        <a href="#" class="click-area more-area" onclick="alert('Pocket option Bot: More opened.')"></a>
 
-        <!-- YOUR VISIBLE BOT BUTTON -->
-        <!-- Using a simple robot icon + text -->
-        <a href="#" class="visible-bot-btn" onclick="alert('Pocket option Bot: Bot Settings opened.')">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13a2.5 2.5 0 0 0 0 5 2.5 2.5 0 0 0 0-5m9 0a2.5 2.5 0 0 0 0 5 2.5 2.5 0 0 0 0-5Z"/>
+        <!-- YOUR VISIBLE BOT BUTTON (Between Trades and Signals) -->
+        <a href="#" class="visible-bot-btn" onclick="alert('Pocket option Bot: Bot opened.')">
+            <!-- The "Rings" icon like Signals -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"></path>
+                <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path>
+                <circle cx="12" cy="12" r="1"></circle>
             </svg>
             <span>Bot</span>
         </a>
