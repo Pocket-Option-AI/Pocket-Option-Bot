@@ -5,108 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Pocket option Bot</title>
     <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- TradingView Lightweight Charts Library -->
-    <script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.1.1/dist/lightweight-charts.standalone.production.js"></script>
 </head>
 <body>
 
-    <!-- Top Navigation Bar -->
-    <header class="top-bar">
-        <div class="user-profile">
-            <i class="fa-solid fa-user-circle"></i>
-        </div>
-        <div class="balance-display">
-            <span class="label">QT Real USD</span>
-            <div class="amount">0 <i class="fa-solid fa-caret-down"></i></div>
-        </div>
-        <div class="top-right-icons">
-            <i class="fa-solid fa-gift" style="color: #4da6ff;"></i>
-            <i class="fa-solid fa-wallet" style="color: #00c853;"></i>
-        </div>
-    </header>
-
-    <!-- Asset Selection Bar -->
-    <div class="asset-bar">
-        <div class="asset-name">
-            <span>🇦🇪🇨🇳 AED/CNY OTC <i class="fa-solid fa-caret-down"></i></span>
-        </div>
-        <div class="asset-actions">
-            <i class="fa-solid fa-ellipsis"></i>
-        </div>
-    </div>
-
-    <!-- The Chart Area -->
-    <div class="chart-container">
-        <div id="chart"></div>
-        <div class="chart-overlay-text">
-            <div>Expiration time</div>
-            <div id="expiration-time">16:14:25</div>
-        </div>
-    </div>
-
-    <!-- Trading Panel (Bottom) -->
-    <div class="trading-panel">
-        <div class="sentiment-bar">
-            <span class="sentiment-green">23%</span>
-            <div class="sentiment-track">
-                <div class="sentiment-fill-green" style="width: 23%;"></div>
-                <div class="sentiment-fill-red" style="width: 77%;"></div>
-            </div>
-            <span class="sentiment-red">77%</span>
-        </div>
-
-        <div class="inputs-row">
-            <div class="input-box">
-                <span class="input-label">Time</span>
-                <div class="input-value"><i class="fa-regular fa-clock"></i> 00:00:03</div>
-            </div>
-            <div class="input-box">
-                <span class="input-label">Amount</span>
-                <div class="input-value"><i class="fa-solid fa-dollar-sign"></i> 1</div>
-            </div>
-        </div>
-
-        <div class="payout-row">
-            <span>Payout $1.92</span>
-            <span class="profit-text">+92%</span>
-            <span>Profit +$0.92</span>
-        </div>
-
-        <div class="action-buttons">
-            <button class="btn-buy">↗ BUY</button>
-            <button class="btn-sell">↘ SELL</button>
-        </div>
-    </div>
-
-    <!-- Bottom Navigation Menu -->
-    <nav class="bottom-nav">
-        <div class="nav-item">
-            <i class="fa-solid fa-chart-line"></i>
-            <span>Trades</span>
-        </div>
+    <!-- This container holds the exact image and the invisible buttons -->
+    <div class="app-container">
         
-        <!-- YOUR NEW BUTTON -->
-        <div class="nav-item active">
-            <i class="fa-solid fa-robot"></i>
-            <span>Botsubscription</span>
-        </div>
+        <!-- The image of your screenshot -->
+        <img src="background.png" alt="Pocket Option App" class="app-image">
 
-        <div class="nav-item center-mode">
-            <i class="fa-solid fa-layer-group"></i>
-            <span>Classic mode</span>
-        </div>
-        <div class="nav-item">
-            <i class="fa-solid fa-users"></i>
-            <span>Social Trading</span>
-        </div>
-        <div class="nav-item">
-            <i class="fa-solid fa-ellipsis"></i>
-            <span>More</span>
-        </div>
-    </nav>
+        <!-- The invisible clickable areas -->
+        <!-- BUY Button -->
+        <a href="#" class="click-area btn-buy-area" onclick="alert('Pocket option Bot: BUY clicked.')"></a>
+        
+        <!-- SELL Button -->
+        <a href="#" class="click-area btn-sell-area" onclick="alert('Pocket option Bot: SELL clicked.')"></a>
 
-    <script src="script.js"></script>
+        <!-- Botsubscription Tab -->
+        <a href="#" class="click-area botsub-area" onclick="alert('Pocket option Bot: Botsubscription opened.')"></a>
+
+        <!-- Trades Tab -->
+        <a href="#" class="click-area trades-area" onclick="alert('Pocket option Bot: Trades opened.')"></a>
+
+    </div>
+
 </body>
 </html>
