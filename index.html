@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Pocket option Bot</title>
     <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+    <!-- TradingView Lightweight Charts Library -->
+    <script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.1.1/dist/lightweight-charts.standalone.production.js"></script>
 </head>
 <body>
 
+    <!-- Top Navigation Bar -->
     <header class="top-bar">
-        <div class="user-profile"><i class="fa-solid fa-user-circle"></i></div>
+        <div class="user-profile">
+            <i class="fa-solid fa-user-circle"></i>
+        </div>
         <div class="balance-display">
             <span class="label">QT Real USD</span>
             <div class="amount">0 <i class="fa-solid fa-caret-down"></i></div>
@@ -22,14 +27,18 @@
         </div>
     </header>
 
+    <!-- Asset Selection Bar -->
     <div class="asset-bar">
-        <div class="asset-name">🇦🇪🇨🇳 AED/CNY OTC <i class="fa-solid fa-caret-down"></i></div>
-        <div class="asset-actions"><i class="fa-solid fa-ellipsis"></i></div>
+        <div class="asset-name">
+            <span>🇦🇪🇨🇳 AED/CNY OTC <i class="fa-solid fa-caret-down"></i></span>
+        </div>
+        <div class="asset-actions">
+            <i class="fa-solid fa-ellipsis"></i>
+        </div>
     </div>
 
+    <!-- The Chart Area -->
     <div class="chart-container">
-        <!-- Background image layer -->
-        <div class="chart-bg"></div>
         <div id="chart"></div>
         <div class="chart-overlay-text">
             <div>Expiration time</div>
@@ -37,6 +46,7 @@
         </div>
     </div>
 
+    <!-- Trading Panel (Bottom) -->
     <div class="trading-panel">
         <div class="sentiment-bar">
             <span class="sentiment-green">23%</span>
@@ -70,12 +80,31 @@
         </div>
     </div>
 
+    <!-- Bottom Navigation Menu -->
     <nav class="bottom-nav">
-        <div class="nav-item"><i class="fa-solid fa-chart-line"></i><span>Trades</span></div>
-        <div class="nav-item active"><i class="fa-solid fa-robot"></i><span>Botsubscription</span></div>
-        <div class="nav-item center-mode"><i class="fa-solid fa-layer-group"></i><span>Classic mode</span></div>
-        <div class="nav-item"><i class="fa-solid fa-users"></i><span>Social Trading</span></div>
-        <div class="nav-item"><i class="fa-solid fa-ellipsis"></i><span>More</span></div>
+        <div class="nav-item">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Trades</span>
+        </div>
+        
+        <!-- YOUR NEW BUTTON -->
+        <div class="nav-item active">
+            <i class="fa-solid fa-robot"></i>
+            <span>Botsubscription</span>
+        </div>
+
+        <div class="nav-item center-mode">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Classic mode</span>
+        </div>
+        <div class="nav-item">
+            <i class="fa-solid fa-users"></i>
+            <span>Social Trading</span>
+        </div>
+        <div class="nav-item">
+            <i class="fa-solid fa-ellipsis"></i>
+            <span>More</span>
+        </div>
     </nav>
 
     <script src="script.js"></script>
