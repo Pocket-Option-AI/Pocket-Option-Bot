@@ -1,73 +1,17 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #0b132b;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: hidden; /* Prevents scrolling */
-}
-
-.app-container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    max-width: 500px; /* Keeps it looking like a phone on desktop */
-    overflow: hidden;
-}
-
-.app-image {
-    width: 100%;
-    height: 100%;
-    object-fit: fill; /* Stretches the image to fit the screen exactly */
-    display: block;
-}
-
-/* 
-   INVISIBLE BUTTONS
-   We position these exactly over the BUY, SELL, and Botsubscription buttons 
-   using percentages, so they scale perfectly on any phone.
-*/
-.click-area {
-    position: absolute;
-    display: block;
-    cursor: pointer;
-    background: transparent; /* Completely invisible */
-}
-
-/* Positioning the BUY button (Bottom Left) */
-.btn-buy-area {
-    bottom: 6%;       /* Distance from bottom */
-    left: 5%;         /* Distance from left */
-    width: 44%;       /* Width of the button */
-    height: 6%;       /* Height of the button */
-}
-
-/* Positioning the SELL button (Bottom Right) */
-.btn-sell-area {
-    bottom: 6%;
-    right: 5%;
-    width: 44%;
-    height: 6%;
-}
-
-/* Positioning the Botsubscription Tab (Bottom Nav, 2nd from left) */
-.botsub-area {
-    bottom: 0%;
-    left: 20%; /* Moves it to the 2nd slot */
-    width: 20%;
-    height: 7%;
-}
-
-/* Positioning the Trades Tab (Bottom Nav, 1st from left) */
-.trades-area {
-    bottom: 0%;
-    left: 0%;
-    width: 20%;
-    height: 7%;
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocket option Bot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="margin: 0; padding: 0;">
+    <div style="position: relative; width: 100vw; height: 100vh;">
+        <img src="background.png" style="width: 100%; height: 100%; object-fit: fill; display: block;">
+        <a href="#" style="position: absolute; bottom: 6%; left: 5%; width: 44%; height: 6%;" onclick="alert('BUY clicked')"></a>
+        <a href="#" style="position: absolute; bottom: 6%; right: 5%; width: 44%; height: 6%;" onclick="alert('SELL clicked')"></a>
+        <a href="#" style="position: absolute; bottom: 0%; left: 20%; width: 20%; height: 7%;" onclick="alert('Botsubscription clicked')"></a>
+        <a href="#" style="position: absolute; bottom: 0%; left: 0%; width: 20%; height: 7%;" onclick="alert('Trades clicked')"></a>
+    </div>
+</body>
+</html>
