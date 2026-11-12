@@ -48,37 +48,35 @@
         .btn-sell-area { bottom: 6%; right: 5%; width: 44%; height: 6%; }
 
         /* 
-           Bottom Nav Layout (6 slots)
-           We divide the 100% width into 6 equal parts (roughly 16.6% each)
+           Bottom Nav Areas 
+           We keep Trades and Signals exactly where they are in the image.
         */
-        .trades-area { bottom: 0%; left: 0%; width: 16.66%; height: 7%; }
-        
-        /* THE NEW BOT BUTTON AREA */
+        .trades-area { bottom: 0%; left: 0%; width: 18%; height: 7%; }
+        .signals-area { bottom: 0%; left: 38%; width: 18%; height: 7%; }
+        .classic-area { bottom: 0%; left: 56%; width: 18%; height: 7%; }
+        .social-area { bottom: 0%; left: 75%; width: 15%; height: 7%; }
+        .more-area { bottom: 0%; left: 90%; width: 10%; height: 7%; }
+
+        /* --- THE THIN BOT BUTTON --- */
         .visible-bot-btn {
             position: absolute;
             bottom: 0%;
-            left: 16.66%; /* Exact slot between Trades and Signals */
-            width: 16.66%;
+            left: 19%; /* Placed right after Trades */
+            width: 18%; /* Squeezed before Signals */
             height: 7%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: #8892b0; /* Gray like the others */
+            color: #8892b0; 
             font-size: 10px;
             text-decoration: none;
             z-index: 20;
-            background-color: #0b132b; /* Solid background to hide the image underneath */
+            background-color: #0b132b; /* Hides the background image exactly underneath it */
         }
         
         .visible-bot-btn span { margin-top: 2px; }
         .visible-bot-btn:active { color: #00c853; }
-
-        /* Shift the rest of the buttons to fit the 6 slots */
-        .signals-area { bottom: 0%; left: 33.33%; width: 16.66%; height: 7%; }
-        .classic-area { bottom: 0%; left: 50%; width: 16.66%; height: 7%; }
-        .social-area { bottom: 0%; left: 66.66%; width: 16.66%; height: 7%; }
-        .more-area { bottom: 0%; left: 83.33%; width: 16.66%; height: 7%; }
 
     </style>
 </head>
@@ -88,7 +86,7 @@
         
         <img src="background.jpg" alt="Pocket Option App" class="app-image">
 
-        <!-- Clickable Areas for existing buttons -->
+        <!-- Existing Clickable Areas (NOT COVERED) -->
         <a href="#" class="click-area btn-buy-area" onclick="alert('Pocket option Bot: BUY clicked.')"></a>
         <a href="#" class="click-area btn-sell-area" onclick="alert('Pocket option Bot: SELL clicked.')"></a>
         
@@ -98,10 +96,10 @@
         <a href="#" class="click-area social-area" onclick="alert('Pocket option Bot: Social Trading opened.')"></a>
         <a href="#" class="click-area more-area" onclick="alert('Pocket option Bot: More opened.')"></a>
 
-        <!-- YOUR VISIBLE BOT BUTTON (Between Trades and Signals) -->
+        <!-- YOUR THIN BOT BUTTON -->
         <a href="#" class="visible-bot-btn" onclick="alert('Pocket option Bot: Bot opened.')">
-            <!-- The "Rings" icon like Signals -->
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Rings Icon -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"></path>
                 <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path>
                 <circle cx="12" cy="12" r="1"></circle>
