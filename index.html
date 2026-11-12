@@ -1,33 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Pocket option Bot</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- This container holds the exact image and the invisible buttons -->
-    <div class="app-container">
-        
-        <!-- The image of your screenshot -->
-        <img src="background.png" alt="Pocket Option App" class="app-image">
+body {
+    background-color: #0b132b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Prevents scrolling */
+}
 
-        <!-- The invisible clickable areas -->
-        <!-- BUY Button -->
-        <a href="#" class="click-area btn-buy-area" onclick="alert('Pocket option Bot: BUY clicked.')"></a>
-        
-        <!-- SELL Button -->
-        <a href="#" class="click-area btn-sell-area" onclick="alert('Pocket option Bot: SELL clicked.')"></a>
+.app-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    max-width: 500px; /* Keeps it looking like a phone on desktop */
+    overflow: hidden;
+}
 
-        <!-- Botsubscription Tab -->
-        <a href="#" class="click-area botsub-area" onclick="alert('Pocket option Bot: Botsubscription opened.')"></a>
+.app-image {
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* Stretches the image to fit the screen exactly */
+    display: block;
+}
 
-        <!-- Trades Tab -->
-        <a href="#" class="click-area trades-area" onclick="alert('Pocket option Bot: Trades opened.')"></a>
+/* 
+   INVISIBLE BUTTONS
+   We position these exactly over the BUY, SELL, and Botsubscription buttons 
+   using percentages, so they scale perfectly on any phone.
+*/
+.click-area {
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    background: transparent; /* Completely invisible */
+}
 
-    </div>
+/* Positioning the BUY button (Bottom Left) */
+.btn-buy-area {
+    bottom: 6%;       /* Distance from bottom */
+    left: 5%;         /* Distance from left */
+    width: 44%;       /* Width of the button */
+    height: 6%;       /* Height of the button */
+}
 
-</body>
-</html>
+/* Positioning the SELL button (Bottom Right) */
+.btn-sell-area {
+    bottom: 6%;
+    right: 5%;
+    width: 44%;
+    height: 6%;
+}
+
+/* Positioning the Botsubscription Tab (Bottom Nav, 2nd from left) */
+.botsub-area {
+    bottom: 0%;
+    left: 20%; /* Moves it to the 2nd slot */
+    width: 20%;
+    height: 7%;
+}
+
+/* Positioning the Trades Tab (Bottom Nav, 1st from left) */
+.trades-area {
+    bottom: 0%;
+    left: 0%;
+    width: 20%;
+    height: 7%;
+}
